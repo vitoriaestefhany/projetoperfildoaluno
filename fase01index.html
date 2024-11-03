@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fase02style.css">
+    <link rel="shortcut icon" href="Microsoft-Fluentui-Emoji-3d-Alien-3d.512.png" type="image/x-icon">
+    <title>Vitória Estéfhany</title>
+</head>
+<body>
+    <h1><strong>Sobre Mim</strong></h1>
+    <table>
+        <tr>
+            <td><h2>Nome Completo</h2><p>Vitória Estéfhany Amorim França</p></td>
+            <td><h2>RA</h2><p>32325325</p></td>
+        </tr>
+    
+        <tr>
+            <td>
+                <h2>CPF</h2>
+                <form id="cpf-form" style="display: flex; align-items: center;" onsubmit="return false;">
+                    <label for="cpf">CPF:</label>
+                    <input type="text" id="cpf" name="cpf" placeholder="" maxlength="14" style="margin-left: 1mm;" required>
+                    <button type="button" onclick="validateCPF()" style="margin-left: 2mm;">OK</button>
+                </form>
+                <div id="error-message" style="color: red; display: none;"></div>
+            </td>
+        
+            <td>
+                <h2>E-mail</h2>
+                <form id="email-form" style="display: flex; align-items: center;">
+                    <label for="email">E-mail:</label>
+                    <input type="text" id="email" name="email" placeholder="12345@****.com" maxlength="18" style="margin-left: 1mm;" required>
+                    <select id="email-provider" onchange="fillEmail()" style="margin-left: 2mm;">
+                        <option value="">Selecione</option>
+                        <option value="@hotmail.com">Hotmail</option>
+                        <option value="@gmail.com">Gmail</option>
+                        <option value="@yahoo.com">Yahoo</option>
+                        <option value="@outlook.com">Outlook</option>
+                    </select>
+                    <button type="button" onclick="moveUp(this)" style="margin-left: 2mm;">OK</button>
+                </form>
+            </td>
+        </tr>
+    
+        <tr>
+            <td><h2>Curso e Período Atual</h2><p>Sistemas De Informação, 3º semestre</p></td>
+            <td><h2>Endereço Completo</h2><p>Rua Pedra Do Mar, Número 290, Bairro Rio Branco</p></td>
+        </tr>
+
+    </table>
+     
+    <table>
+    <tr>
+        <td colspan="2">
+            <h2>UCs já cursadas</h2>
+
+            <form id="add-uc-form">
+                <input type="text" id="uc-name" placeholder="Adicionar nova UC" required>
+                <button type="submit">Adicionar UC</button>
+            </form>
+
+            <ul id="uc-list">
+                <li class="uc-item" draggable="true">Core Curriculum <button onclick="moveUp(this)">▲</button><button onclick="moveDown(this)">▼</button><button onclick="deleteUc(this)">❌</button></li>
+                <li class="uc-item" draggable="true">Vida e Carreira <button onclick="moveUp(this)">▲</button><button onclick="moveDown(this)">▼</button><button onclick="deleteUc(this)">❌</button></li>
+                <li class="uc-item" draggable="true">Ambiente Computacionais e Conectividade<button onclick="moveUp(this)">▲</button><button onclick="moveDown(this)">▼</button><button onclick="deleteUc(this)">❌</button></li>
+                <li class="uc-item" draggable="true">Modelagem De Software<button onclick="moveUp(this)">▲</button><button onclick="moveDown(this)">▼</button><button onclick="deleteUc(this)">❌</button></li>
+                <li class="uc-item" draggable="true">Programação De Soluções Computacionais<button onclick="moveUp(this)">▲</button><button onclick="moveDown(this)">▼</button><button onclick="deleteUc(this)">❌</button></li>
+                <li class="uc-item" draggable="true">Sistemas Computacionais e Segurança<button onclick="moveUp(this)">▲</button><button onclick="moveDown(this)">▼</button><button onclick="deleteUc(this)">❌</button></li>
+            </ul>
+        </td>
+    </tr>
+    </table>
+
+        <table>
+            <tr>
+            <td colspan="2">
+                <h2>Descrição Perfil Pessoal</h2>
+            
+                <form id="add-informacoes-form">
+                    <input type="text" id="informacoes-novas" placeholder="Adicionar novas informações" style="margin-left: 1mm; width: 180px;" required>
+                    <button type="submit" style="margin-left: 1mm; width: 200px;">Adicionar Novas Informações</button>
+                </form>
+                
+                <p id="perfil-texto">
+                    Eu tenho 22 anos, gosto muito de ouvir músicas, meus artistas preferidos são <a href="https://open.spotify.com/intl-pt/artist/06HL4z0CvFAxyc27GXpf02?si=JPIVsPS6RVWzyw2XovDZ6g" target="_blank">Taylor Swift</a>, 
+                    <a href="https://open.spotify.com/intl-pt/artist/59FrDXDVJz0EKqYg39dnT2?si=l6JGuQIoQf2h7QCbmgZnYQ" target="_blank">Jão</a>, 
+                    <a href="https://open.spotify.com/intl-pt/artist/6eUKZXaKkcviH0Ku9w2n3V?si=xCnMpJxhTq6os3QmOMK5eg" target="_blank">Ed Sheeran</a> e 
+                    <a href="https://open.spotify.com/intl-pt/artist/3YQKmKGau1PzlVlkL1iodx?si=PEYwjUCYQlKQWPaEvx2BMQ" target="_blank">Twenty One Pilots</a>. Gosto também de jogar videogame, 
+                    meus jogos favoritos da vida <a href="https://store.steampowered.com/app/319630/Life_is_Strange__Episode_1/" target="_blank">Life Is Strange</a>, 
+                    <a href="https://www.google.com/search?gs_ssp=eJzj4tVP1zc0TDYtrjIzrjIzYPQSLclIVchJLC5RyE9TKC1WKEgsKlEwAgDbHwuo&q=the+last+of+us+part+2&oq=the+last+of+us+par&gs_lcrp=EgZjaHJvbWUqDQgBEC4YgwEYsQMYgAQyEAgAEAAYgwEY4wIYsQMYgAQyDQgBEC4YgwEYsQMYgAQyDQgCEC4YgwEYsQMYgAQyCggDEAAYsQMYgAQyBwgEEC4YgAQyBwgFEAAYgAQyBwgGEAAYgAQyBwgHEAAYgAQyBggIEEUYOTIHCAkQABiABNIBCDQzODVqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8" target="_blank">The Last Of Us Part II</a> e 
+                    <a href="https://store.steampowered.com/app/2050650/Resident_Evil_4/" target="_blank">Resident Evil 4</a>, além disso, sou torcedora fanática do Atlético Mineiro.
+                </p>
+            </td>    
+            </tr>
+       </table>
+
+        <table>
+            <tr>
+            <td colspan="2"> 
+                <h2>Perfil Profissional/Acadêmico</h2>
+
+            <form id="add-informacoesacademicas-form">
+                <input type="text" id="informacoes-novas" placeholder="Adicionar novas informações" style="margin-left: 1mm; width: 180px;" required>
+                <button type="submit" style="margin-left: 1mm; width: 200px;">Adicionar Novas Informações</button>
+            </form>
+
+                <p id="academico-texto">
+                    Sempre gostei de tecnologia desde criança e da área da saúde também, quando fiz o enem decidi seguir para biomedicina e fiz até o terceiro semestre, mas não estava gostando mais do curso e decidi seguir a área de tecnologia onde escolhi fazer Sistemas De Informação, dentro do curso descobri que gosto muito da parte de criação de códigos e sites, pretendo futuramente seguir essa área de atuação. Faço faculdade na UNA no campus Cristiano Machado e atualmente estou procurando algum estágio.
+                 </p>
+             </tr>
+            </td>  
+        </table>
+
+        <table>
+            <tr>
+            <td colspan="2">
+                <h2>Fotos Perfil</h2>
+                <div class="carousel">
+                  <img src="fotobone.jpg" alt="foto de boné" class="carousel-image active">
+                  <img src="fotocolorida.jpeg" alt="foto com camisa colorida" class="carousel-image">
+                  <img src="fotoarenaMRV2.jpeg" alt="foto na arena MRV" class="carousel-image">
+                  <button class="carousel-button prev" onclick="prevImage()">❮</button>
+                  <button class="carousel-button next" onclick="nextImage()">❯</button>
+                </div>
+            </td>
+        </tr>
+        </table>
+
+        <table>
+            <tr>
+            <td colspan="2">
+                <h2>Link Para Redes Sociais</h2>
+                <ul>
+                    <li><img src="icone-github.png" alt="icone github"><a href="https://github.com/vitoriaestefhany" target="_blank">/vitoriaestefhany</a>- Meu repositório do GitHub</li>
+                    <li><img src="icone-instagram.png" alt="icone instagram"><a href="https://www.instagram.com/vitoria_estefhany/" target="_blank">/vitoria_estefhany</a>- Instagram</li>
+                    <li><img src="Pictogrammers-Material-Linkedin.512.2.png" alt="icone linkedin"><a href="http://www.linkedin.com/in/vitória-estéfhany-6b9984330" target="_blank">/Vitória Estéfhany</a> - linkedin</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+
+    <script src="fase03script.js"></script>
+
+</body>
+</html>
