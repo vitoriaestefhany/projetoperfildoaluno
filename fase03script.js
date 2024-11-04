@@ -130,5 +130,24 @@ function fillEmail() {
 
 document.getElementById("email").addEventListener("input", fillEmail);
 
+document.addEventListener("DOMContentLoaded", () => {
+    const perfilTexto = document.getElementById("perfil-texto");
+    const addInformacoesFormPerfil = document.getElementById("add-informacoes-form-perfil");
+    const informacoesNovasPerfil = document.getElementById("informacoes-novas-perfil");
 
+    addInformacoesFormPerfil.addEventListener("submit", (event) => {
+        event.preventDefault();
+        perfilTexto.innerHTML += `<br>${informacoesNovasPerfil.value}`;
+        informacoesNovasPerfil.value = "";
+    });
 
+    const academicoTexto = document.getElementById("academico-texto");
+    const addInformacoesFormAcademico = document.getElementById("add-informacoes-form-academico");
+    const informacoesNovasAcademico = document.getElementById("informacoes-novas-academico");
+
+    addInformacoesFormAcademico.addEventListener("submit", (event) => {
+        event.preventDefault();
+        academicoTexto.innerHTML += `<br>${informacoesNovasAcademico.value}`;
+        informacoesNovasAcademico.value = "";
+    });
+});
